@@ -1,0 +1,16 @@
+What is the capital of France?@Paris
+Who painted the Mona Lisa?@Leonardo da Vinci
+What is the smallest planet in our solar system?@Mercury
+What is the name of the largest planet in our solar system?@Jupiter
+What is the name of the world's largest and most famous coral reef system located in Australia?@Great Barrier Reef
+What is the name of the famous tower located in Paris, France?@Eiffel Tower
+What is the name of the American musician and cultural icon known as the "King of Rock and Roll"?@Elvis
+What is the name of the famous detective created by Sir Arthur Conan Doyle?@Sherlock
+What is the name of the mythical creature that is half-man and half-horse?@Centaur
+What is the name of the Italian Renaissance artist famous for painting the ceiling of the Sistine Chapel?@Michelangelo
+What is the name of the famous river in Egypt?@Nile
+What is the name of the largest desert in the world?@Sahara
+What is the name of the world's largest ocean?@Pacific
+
+
+
