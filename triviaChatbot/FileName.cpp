@@ -41,20 +41,35 @@ void askQuestions(const vector<Question>& questions, int numQuestions) {
         cout << questions[index].question << endl;
         cin >> answer;
         if (answer == questions[index].answer) {
-            cout << "Correct!" << endl;
+            cout << "Correct!" << endl << endl;
             score++;
         }
         else {
-            cout << "Incorrect. The correct answer is " << questions[index].answer << endl;
+            cout << "Incorrect. The correct answer is " << questions[index].answer << endl << endl;
         }
     }
-    cout << "You scored " << score << " out of " << numQuestions << " questions." << endl;
+    cout << "You scored " << score << " out of " << numQuestions << " questions." << endl << endl;
 }
 
 int main() {
-    srand(time(NULL));
-    vector<Question> questions;
-    readQuestions(questions, "TriviaQuestions.txt");
-    askQuestions(questions, 13);
+    string userInput;
+    char tryAgain = 'y';
+
+    while (tryAgain == 'y') {
+        cout << "Would you like to play a game of triva? ";
+        cin >> userInput;
+
+        if (userInput == "No" || userInput == "no") {
+            tryAgain = 'n';
+            cout << endl;
+        }
+        else {
+            srand(time(NULL));
+            vector<Question> questions;
+            readQuestions(questions, "TriviaQuestions.txt");
+            askQuestions(questions, 13);
+            cout << endl;
+        }
+    }
     return 0;
 }
