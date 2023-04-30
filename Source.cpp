@@ -13,14 +13,15 @@ struct TriviaQuestion {
 }; string user_Input;
 
 int main() {
-
+     int score = 0;
+    string user_Input;
     char tryAgain = 'y';
     // Set up the trivia questions
     vector<TriviaQuestion> trivia_questions = {
         {
             "How long is an Olympic swimming pool (in meters)?",
             {"45", "50", "100", "55"},
-            0
+            1
         },
         {
             "What geometric shape is generally used for stop signs?",
@@ -34,19 +35,7 @@ int main() {
             0
         }
     };
-
-    //  random number generator
-    srand(unsigned(time(0)));
-
-
-
-    // Welcome the user to the chatbot
-    cout << "Hello! I'm a trivia bot. What's your name?" << endl;
-    getline(cin, user_Input);
-
-    cout << "Nice to meet you, " << user_Input << endl;
-   
-    
+      srand(time(NULL));
     while (true) {
         // Choose a random question from the list of trivia questions
         int random_question_index = rand() % trivia_questions.size();
@@ -66,26 +55,35 @@ int main() {
         // Check if the answer is correct
         if (user_choice == question.correct_choice + 1) {
             cout << "Correct! Well done." << endl;
+            score++;
         }
         else {
             cout << "Incorrect. The correct answer is: " << question.choices[question.correct_choice] << endl;
         }
-        // Ask the user if they want to play again
-        while (tryAgain == 'y')
+        
+
+        while (tryAgain=='y')
         {
-            cout << "Would you like to try again? ";
+            cout << "Would you like to try again? (yes/no) ";
             cin >> user_Input;
-            if (user_Input == "n" || user_Input == "N")
+
+            if (user_Input=="No"|| user_Input=="no")
             {
                 tryAgain = 'n';
+               
                 cout << endl;
+            }
+            else
+            {
+                srand(time(NULL));
+                int random_question_index = rand() % trivia_questions.size();
+                TriviaQuestion& question = trivia_questions[random_question_index];
+                cout << "Thanks for playing! Goodbye." << endl;
+                
             }
 
         }
-        cout << "Thanks for playing! Goodbye." << endl;
-        cout << endl;
-
-
+  
 
     }
     return 0;
